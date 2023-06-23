@@ -3,7 +3,6 @@ require_relative "lib/torus/version"
 Gem::Specification.new do |s|
   s.name = "torus"
   s.required_ruby_version = ">= #{Torus::RUBY_VERSION}"
-  s.required_ruby_version = ">= #{Torus::RUBY_VERSION}"
   s.version = Torus::VERSION
   s.authors = ["n0tbot"]
   s.email = ["wilber.garcia@outlook.es"]
