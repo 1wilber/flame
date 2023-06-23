@@ -1,6 +1,6 @@
 require "torus/version"
+require "torus/generators/app"
+require "torus/app_builder"
 
 module Torus
-  class Error < StandardError; end
-  # Your code goes here...
 end

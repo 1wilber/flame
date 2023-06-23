@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   # s.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   s.add_dependency "rails", Torus::RAILS_VERSION
-
+  s.files = Dir[".ruby-version", "bin/torus", "{lib,templates}/**/*", "LICENSE", "*.md"]
   s.executables = ["torus"]
   s.require_paths = ["lib"]
   s.add_development_dependency "rspec", "~> 3.12"
