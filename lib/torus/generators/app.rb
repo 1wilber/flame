@@ -17,6 +17,13 @@ module Torus
         build :configure_generators
       end
 
+      def generate_default
+        run("spring stop > /dev/null 2>&1 || true")
+        run("bundle exec vite install")
+        generate("rspec:install")
+        generate("annotate:install")
+      end
+
       protected
 
       def get_builder_class
