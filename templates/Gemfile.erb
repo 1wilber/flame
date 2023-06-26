@@ -3,13 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "<%= Torus::RUBY_VERSION %>"
 
-gem "active_model_serializers", "~> 0.10.0"
+gem "active_model_serializers", "~> 0.9.9"
 gem "bootsnap", require: false
 gem "haml-rails"
 gem "importmap-rails"
+gem "pager_api"
+gem "pagy"
 gem "pg"
 gem "puma"
 gem "rails", "<%= Torus::RAILS_VERSION %>"
+gem "responders"
 gem "vite_rails"
 
 group :development, :test do
