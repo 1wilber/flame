@@ -10,10 +10,6 @@ module Torus
       end
 
       def custom_template
-        invoke :setup_config
-      end
-
-      def setup_config
         build :configure_generators
       end
 
@@ -23,6 +19,20 @@ module Torus
         generate("annotate:install")
         generate("responders:install")
         run("bundle exec vite install")
+      end
+
+      def install_devise
+        generate("devise:install")
+        generate("devise", "User")
+      end
+
+      def install_devise_jwt
+        generate("migration", "JwtDenylist", "jit:string:index")
+        gsub_file(
+          "app/models/user.rb",
+          /^\s*devise\s*:[a-z_]+(?:,\s*:[a-z_]+)*\s*$/,
+          "  devise :database_authenticatable, :registerable, :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist"
+        )
       end
 
       protected

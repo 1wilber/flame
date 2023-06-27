@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     torus (0.1.0)
       rails (= 6.1.7)
