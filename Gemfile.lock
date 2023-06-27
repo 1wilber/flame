@@ -1,7 +1,7 @@
 PATH
-  remote: ..
+  remote: .
   specs:
-    torus (0.1.0)
+    flame (0.1.0)
       rails (= 6.1.7)
 
 GEM
@@ -206,7 +206,7 @@ PLATFORMS
 DEPENDENCIES
   rspec (~> 3.12)
   standard (~> 1.29)
-  torus!
+  flame!
 
 BUNDLED WITH
    2.4.10

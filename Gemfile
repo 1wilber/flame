@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in torus.gemspec
+# Specify your gem's dependencies in flame.gemspec
 gemspec

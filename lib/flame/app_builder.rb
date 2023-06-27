@@ -1,4 +1,4 @@
-module Torus
+module Flame
   class AppBuilder < Rails::AppBuilder
     def gemfile
       template "Gemfile.erb", "Gemfile"

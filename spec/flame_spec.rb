@@ -1,6 +1,6 @@
-RSpec.describe Torus do
+RSpec.describe Flame do
   it "has a version number" do
-    expect(Torus::VERSION).not_to be nil
+    expect(Flame::VERSION).not_to be nil
   end
 
   it "does something useful" do
