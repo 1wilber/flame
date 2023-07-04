@@ -1,34 +1,37 @@
 # Flame
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Flame`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Flame is rails app generator inspired in [Suspenders](https://github.com/thoughtbot/suspenders)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'Flame'
-```
 
-And then execute:
+    $ gem install flame
+    $ flame <app_name>
 
-    $ bundle install
+## Gemfile
 
-Or install it yourself as:
+* [AMS](https://github.com/rails-api/active_model_serializers) for serialize json (api)
+* [Devise](https://github.com/heartcombo/devise) for user authentication
+* [Devise JWT](https://github.com/waiting-for-dev/devise-jwt) for user jwt tokens instead devise views.
+* [Haml](https://github.com/haml/haml) we prefer use haml extension instead classic .erb
+* [Pager API](https://github.com/IcaliaLabs/pager-api) & [Pagy](https://github.com/ddnexus/pagy) for api pagination
+* [Vite](https://github.com/ElMassimo/vite_ruby) instead webpack
+* [Annotate](https://github.com/ctran/annotate_models) generate comments on the model with current schema
 
-    $ gem install Flame
 
-## Usage
+for test environment we use:
+* [FactoryBot](https://github.com/thoughtbot/factory_bot)
+* [FFaker](https://github.com/ffaker/ffaker)
+* [RSpec](https://github.com/rspec/rspec-rails)
+* [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
+* [Database Cleanner](https://github.com/DatabaseCleaner/database_cleaner)
 
-TODO: Write usage instructions here
 
-## Development
+## Style Guide
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Projects created with Flame come with  [Standard](https://github.com/standardrb/standard)
 
 ## Contributing
 
@@ -38,3 +41,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
