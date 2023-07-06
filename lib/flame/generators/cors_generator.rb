@@ -5,7 +5,7 @@ module Flame
     CONFIG = <<~RUBY
       Rails.application.config.middleware.insert_before 0, Rack::Cors do
         allow do
-          origins "localhost:5100", "127.0.0.1:5100" # Change this to your client URL.
+          origins Rails.env.development? ? ["localhost:5100", "127.0.0.1:5100"] : ENV["FRONTEND_URL"]
           resource "*",
             headers: %w[Authorization],
             methods: :any,

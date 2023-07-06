@@ -19,7 +19,6 @@ end
 ARGV << "--skip-javascript"
 ARGV << "--skip-jbuilder"
 ARGV << "--database=postgresql"
-ARGV << "--api"
 ARGV << "-T"
 
 templates_path = File.expand_path(File.join("..", "templates"), File.dirname(__FILE__))

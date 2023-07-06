@@ -14,7 +14,6 @@ Add this line to your application's Gemfile:
 
 * [AMS](https://github.com/rails-api/active_model_serializers) for serialize json (api)
 * [Devise](https://github.com/heartcombo/devise) for user authentication
-* [Devise JWT](https://github.com/waiting-for-dev/devise-jwt) for user jwt tokens instead devise views.
 * [Haml](https://github.com/haml/haml) we prefer use haml extension instead classic .erb
 * [Pager API](https://github.com/IcaliaLabs/pager-api) & [Pagy](https://github.com/ddnexus/pagy) for api pagination
 * [Vite](https://github.com/ElMassimo/vite_ruby) instead webpack

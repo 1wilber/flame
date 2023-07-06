@@ -19,7 +19,7 @@ module Flame
     def generate_home
       generate("controller", "pages", "index", "--skip-routes", "--no-test-framework")
       run("echo '' > app/views/pages/index.html.haml")
-      inject_into_file "app/views/pages/index.html.haml", "%div#root\n"
+      append_to_file("app/views/pages/index.html.haml", "%div#root\n")
     end
 
     def generate_root_route

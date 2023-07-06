@@ -23,8 +23,6 @@ module Flame
         invoke "flame:testing"
         invoke "flame:cors"
         invoke "flame:devise"
-        rails_command "db:create"
-        invoke "flame:devise_jwt"
         invoke "flame:vite"
 
         generate("annotate:install")
