@@ -18,6 +18,8 @@ module Flame
 
       def generators
         run("spring stop > /dev/null 2>&1 || true")
+        run("bundle install")
+        invoke "flame:haml"
         rails_command "db:create"
 
         invoke "flame:testing"
@@ -27,6 +29,7 @@ module Flame
 
         generate("annotate:install")
         run("bundle exec standardrb --fix-unsafely")
+        run("bundle exec haml-lint app/views -A -a")
         exit 0
       end
 
