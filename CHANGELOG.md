@@ -1,3 +1,9 @@
+## v0.1.2 (2023-07-10)
+
+### Fix
+
+- modify gem name to flamerb
+
 ## v0.1.1 (2023-07-10)
 
 ### Fix
