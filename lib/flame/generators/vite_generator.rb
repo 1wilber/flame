@@ -15,12 +15,6 @@ module Flame
       run("rm -rf ./node_modules")
     end
 
-    def import_vite
-      insert_into_file "app/views/layouts/application.html.haml", "  = vite_client_tag\n", before: "%body\n"
-      insert_into_file "app/views/layouts/application.html.haml", "    = vite_react_refresh_tag\n", before: "%body\n"
-      insert_into_file "app/views/layouts/application.html.haml", "    = vite_javascript_tag 'application.jsx'\n", before: "%body\n"
-    end
-
     def install_packages
       packages = %w[
         react
@@ -36,8 +30,8 @@ module Flame
         @emotion/react
         @emotion/styled
         react-toastify
-        @mui/styled-engine-sc
         styled-components
+        sass
       ]
       yarn_install(packages)
     end
@@ -46,6 +40,7 @@ module Flame
       packages = %w[
         standard
         @vitejs/plugin-react-swc
+        eslint-plugin-react
       ]
 
       yarn_install_dev(packages)
@@ -53,8 +48,12 @@ module Flame
 
     def copy_templates
       remove_file "vite.config.js"
+      remove_file "vite.config.ts"
       template("vite.config.js", "vite.config.js")
       template("jsconfig.json", "jsconfig.json")
+      run("rm -rf app/frontend")
+      directory("frontend", "app/frontend")
+      template("app/views/layouts/application.html.haml", "app/views/layouts/application.html.haml")
     end
 
     def install_standardjs

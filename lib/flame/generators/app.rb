@@ -1,6 +1,5 @@
 require "rails/generators"
 require "rails/generators/rails/app/app_generator"
-require "byebug"
 
 module Flame
   module Generators
@@ -30,10 +29,19 @@ module Flame
         generate("annotate:install")
         run("bundle exec standardrb --fix-unsafely")
         run("bundle exec haml-lint app/views -A -a")
+        welcome_message
+
         exit 0
       end
 
       protected
+
+      def welcome_message
+        say "Flame app successfully created!", :green
+        say "Run `foreman start -f Procfile.dev` to start the server", :green
+        say "please run in rails console the default credentials", :green
+        say "\tUser.create(email: 'admin@example.com', password: 'admin123', password_confirmation: 'admin123')"
+      end
 
       def get_builder_class
         Flame::AppBuilder

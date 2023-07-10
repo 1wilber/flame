@@ -204,9 +204,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  flame!
   rspec (~> 3.12)
   standard (~> 1.29)
-  flame!
 
 BUNDLED WITH
    2.4.10

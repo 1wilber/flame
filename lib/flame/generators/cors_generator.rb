@@ -19,9 +19,5 @@ module Flame
     def create_cors_file
       create_file("config/initializers/cors.rb", CONFIG)
     end
-
-    def install_gem
-      gem "rack-cors"
-    end
   end
 end

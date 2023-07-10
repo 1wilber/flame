@@ -3,13 +3,19 @@ require_relative "base"
 module Flame
   class DeviseGenerator < Generators::Base
     APP_CONTROLLER = <<~RUBY
+      before_action :authenticate_user!, only: [:current]
       protect_from_forgery with: :exception, unless: :json_request?
 
-        private
+      def current
+        render json: current_user
+      end
 
-        def json_request?
-          request.format.json?
-        end
+
+      private
+
+      def json_request?
+        request.format.json?
+      end
     RUBY
 
     SESSION_CONTROLLER = <<~RUBY
@@ -52,7 +58,14 @@ module Flame
       gsub_file(
         "config/routes.rb",
         /devise_for\s*:\s*users/,
-        '  devise_for :users, defaults: {format: :json}, controllers: {sessions: "sessions"}'
+        <<~RUBY
+          devise_for :users, defaults: {format: :json}, controllers: {sessions: "sessions"}
+          get "/users/current", to: "application#current", defaults: {format: :json}
+
+          get "*path", to: "pages#index", constraints: ->(request) do
+            !request.xhr? && request.format.html?
+          end
+        RUBY
       )
     end
 

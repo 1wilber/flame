@@ -27,6 +27,22 @@ for test environment we use:
 * [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [Database Cleanner](https://github.com/DatabaseCleaner/database_cleaner)
 
+## Package.json
+* [react](https://yarnpkg.com/package/react) & [react-dom](https://yarnpkg.com/package/react-dom)
+* [formik](https://yarnpkg.com/package/formik) & [yup](https://yarnpkg.com/package/yup) for handle and validate forms.
+* [axios](https://yarnpkg.com/package/axios) for http request
+* [@reduxjs/toolkit](https://yarnpkg.com/package/@reduxjs/toolkit)
+* [react-router-dom](https://yarnpkg.com/package/react-router-dom) for routing
+* [@mui/material](https://yarnpkg.com/package/@mui/material) library for components
+* [@mui/icons-material](https://yarnpkg.com/package/@mui/icons-material) library for icons
+* [react-toastify](https://yarnpkg.com/package/react-toastify) simple and beauty notifcations.
+* [sass](https://yarnpkg.com/package/sass)
+
+for dev dependencies
+* standard
+* @vitejs/plugin-react-swc
+* eslint-plugin-react
+
 
 ## Style Guide
 

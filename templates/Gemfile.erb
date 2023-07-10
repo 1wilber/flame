@@ -12,6 +12,7 @@ gem "pagy"
 gem "pg"
 gem "puma"
 gem "rails", "<%= Flame::RAILS_VERSION %>"
+gem "rack-cors"
 gem "vite_rails"
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
@@ -22,5 +23,17 @@ group :development do
   gem "spring"
   gem "standard"
   gem "html2haml" # Remove this gem!
-  gem 'haml_lint', require: false
+  gem "haml_lint", require: false
+end
+
+group :development, :test do
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails", "~> 6.2"
+  gem "ffaker", "~> 2.21"
+  gem "rspec-rails", "~> 6.0.0"
+  gem "shoulda-matchers", "~> 5.0"
+end
+
+group :test do
+  gem "database_cleaner-active_record", "2.1"
 end
