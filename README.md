@@ -7,8 +7,8 @@ Flame is rails app generator inspired in [Suspenders](https://github.com/thought
 Add this line to your application's Gemfile:
 
 
-    $ gem install flame
-    $ flame <app_name>
+    $ gem install flamerb
+    $ flamerb <app_name>
 
 ## Gemfile
 

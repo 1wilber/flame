@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/notb0t/flame"
 
   s.files = Dir[".ruby-version", "bin/flame", "{lib,templates}/**/*", "LICENSE", "*.md"]
-  s.executables = ["flame"]
+  s.executables = ["flamerb"]
   s.require_paths = ["lib"]
   s.add_dependency "rails", Flame::RAILS_VERSION
   s.add_development_dependency "rspec", "~> 3.12"
