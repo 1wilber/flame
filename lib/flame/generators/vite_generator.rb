@@ -52,8 +52,11 @@ module Flame
       template("vite.config.js", "vite.config.js")
       template("jsconfig.json", "jsconfig.json")
       run("rm -rf app/frontend")
+      run("rm -rf db/seeds.rb")
+      run("rm app/views/layouts/application.html.haml")
       directory("frontend", "app/frontend")
       template("app/views/layouts/application.html.haml", "app/views/layouts/application.html.haml")
+      template("db/seeds.rb", "db/seeds.rb")
     end
 
     def install_standardjs

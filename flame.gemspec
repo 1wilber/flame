@@ -1,7 +1,7 @@
 require_relative "lib/flame/version"
 
 Gem::Specification.new do |s|
-  s.name = "flame"
+  s.name = "flamerb"
   s.required_ruby_version = ">= #{Flame::RUBY_VERSION}"
   s.version = Flame::VERSION
   s.authors = ["n0tbot"]

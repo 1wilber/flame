@@ -29,6 +29,8 @@ module Flame
         generate("annotate:install")
         run("bundle exec standardrb --fix-unsafely")
         run("bundle exec haml-lint app/views -A -a")
+        rails_command("db:migrate") if yes?("\nDo you want to run migrations? [y/n]")
+        rails_command("db:seed") if yes?("\nDo you want to run seed? [y/n]")
         welcome_message
 
         exit 0
@@ -39,8 +41,6 @@ module Flame
       def welcome_message
         say "Flame app successfully created!", :green
         say "Run `foreman start -f Procfile.dev` to start the server", :green
-        say "please run in rails console the default credentials", :green
-        say "\tUser.create(email: 'admin@example.com', password: 'admin123', password_confirmation: 'admin123')"
       end
 
       def get_builder_class
