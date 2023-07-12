@@ -1,3 +1,9 @@
+## v0.1.3 (2023-07-12)
+
+### Fix
+
+- add missing templates for testing_generator
+
 ## v0.1.2 (2023-07-10)
 
 ### Fix
