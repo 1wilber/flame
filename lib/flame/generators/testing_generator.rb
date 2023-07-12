@@ -6,7 +6,18 @@ module Flame
       generate("rspec:install")
     end
 
-    def install_gems
+    def import_spec_support
+      inject_into_file(
+        "spec/rails_helper.rb",
+        "Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }\n",
+        before: "RSpec.configure do |config|\n"
+      )
+    end
+
+    def support_template
+      template("spec/support/shoulda_matchers.rb")
+      template("spec/support/factory_bot.rb")
+      template("spec/support/database_cleaner.rb")
     end
   end
 end

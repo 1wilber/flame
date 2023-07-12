@@ -2,8 +2,6 @@ require_relative "base"
 
 module Flame
   class ViteGenerator < Generators::Base
-    source_root File.expand_path("../../../templates", __dir__)
-
     def install
       run("rm -rf ./package.lock")
       run("yarn init -y")

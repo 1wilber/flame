@@ -4,8 +4,6 @@ require "rails/generators/base"
 module Flame
   module Generators
     class Base < Rails::Generators::Base
-      source_root File.expand_path("../../../templates", __dir__)
-
       private
 
       # @param [Array] packages
@@ -22,6 +20,12 @@ module Flame
       # yarn_install_dev(["vite", "react", "react-dom"])
       def yarn_install_dev(packages)
         run("yarn add -D #{packages.join(" ")} --silent")
+      end
+
+      class << self
+        def source_root
+          File.expand_path("../../../templates", __dir__)
+        end
       end
     end
   end
