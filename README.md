@@ -48,6 +48,12 @@ for dev dependencies
 
 Projects created with Flame come with  [Standard](https://github.com/standardrb/standard)
 
+## To Do
+  - [ ] Add [rubocop-rspec](https://github.com/rubocop/rubocop-rspec)
+ - [ ] Add [strong_migrations](https://github.com/ankane/strong_migrations)
+ - [ ] Add [bullet](https://github.com/flyerhzm/bullet)
+ - [ ] Add [vite-eslint-plugin](https://github.com/gxmari007/vite-plugin-eslint)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Flame.
