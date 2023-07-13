@@ -1,3 +1,9 @@
+## v0.2.1 (2023-07-13)
+
+### Fix
+
+- conflict with template location
+
 ## v0.2.0 (2023-07-13)
 
 ### Feat
