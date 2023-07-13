@@ -1,3 +1,10 @@
+## v0.2.0 (2023-07-13)
+
+### Feat
+
+- Add rubocop-rspec and solargraph-rails
+- update codeowner file
+
 ## v0.1.3 (2023-07-12)
 
 ### Fix
