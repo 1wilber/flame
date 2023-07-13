@@ -27,8 +27,9 @@ module Flame
         invoke "flame:vite"
 
         generate("annotate:install")
+        template ".rubocop.yml", ".rubocop.yml"
+        template ".solargraph.yml", ".solargraph.yml"
         run("bundle exec standardrb --fix-unsafely")
-        run("bundle exec haml-lint app/views -A -a")
         rails_command("db:migrate") if yes?("\nDo you want to run migrations? [y/n]")
         rails_command("db:seed") if yes?("\nDo you want to run seed? [y/n]")
         welcome_message

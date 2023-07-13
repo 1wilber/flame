@@ -1,0 +1,25 @@
+inherit_mode:
+  merge:
+    - Exclude
+require:
+  - standard
+  # problem with block_single_line_braces solved by: https://github.com/castwide/vscode-solargraph/issues/118#issuecomment-505348192
+  - standard/cop/block_single_line_braces
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-rails
+inherit_gem:
+  standard: config/base.yml
+  standard-performance: config/base.yml
+  standard-custom: config/base.yml
+AllCops:
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Exclude:
+    - node_modules/**/*
+    - public/**/*
+    - vendor/**/*
+RSpec:
+  Enabled: true # enable rubocop-rspec cops
