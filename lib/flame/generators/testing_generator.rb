@@ -19,8 +19,8 @@ module Flame
       template("spec/support/factory_bot.rb")
       template("spec/support/database_cleaner.rb")
       #TODO: Move this
-      template ".rubocop.yml", ".rubocop.yml"
-      template ".solargraph.yml", ".solargraph.yml"
+      template(".rubocop.yml")
+      template(".solargraph.yml" )
     end
   end
 end
