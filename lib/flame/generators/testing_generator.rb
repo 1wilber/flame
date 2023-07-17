@@ -18,9 +18,6 @@ module Flame
       template("spec/support/shoulda_matchers.rb")
       template("spec/support/factory_bot.rb")
       template("spec/support/database_cleaner.rb")
-      #TODO: Move this
-      template(".rubocop.yml")
-      template(".solargraph.yml" )
     end
   end
 end

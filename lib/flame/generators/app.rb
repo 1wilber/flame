@@ -26,10 +26,14 @@ module Flame
         invoke "flame:devise"
         invoke "flame:vite"
 
-        generate("annotate:install")
-        run("bundle exec standardrb --fix-unsafely")
-        rails_command("db:migrate") if yes?("\nDo you want to run migrations? [y/n]")
+        if yes?("\nDo you want to run migrations? [y/n]")
+          rails_command("db:migrate")
+          generate("annotate:install")
+        end
         rails_command("db:seed") if yes?("\nDo you want to run seed? [y/n]")
+        template("rubocop.yml", ".rubocop.yml")
+        template("solargraph.yml", ".solargraph.yml")
+        run("bundle exec standardrb --fix-unsafely")
         welcome_message
 
         exit 0
