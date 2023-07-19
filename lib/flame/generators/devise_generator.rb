@@ -2,79 +2,25 @@ require_relative "base"
 
 module Flame
   class DeviseGenerator < Generators::Base
-    APP_CONTROLLER = <<~RUBY
-      before_action :authenticate_user!, only: [:current]
-      protect_from_forgery with: :exception, unless: :json_request?
-
-      def current
-        render json: current_user
-      end
-
-
-      private
-
-      def json_request?
-        request.format.json?
-      end
-    RUBY
-
-    SESSION_CONTROLLER = <<~RUBY
-      class SessionsController < Devise::SessionsController
-        respond_to :json
-      
-        private
-      
-        def respond_with(resource, _opts = {})
-          render json: resource
-        end
-      
-        def respond_to_on_destroy
-          head :no_content
-        end
-      end
-    RUBY
-
     def install
       generate("devise:install")
       generate("devise", "User")
     end
 
-    def add_timeoutable
-      gsub_file(
-        "app/models/user.rb",
-        /^\s*devise\s*:[a-z_]+(?:,\s*:[a-z_]+)*\s*$/,
-        "  devise :database_authenticatable, :registerable, :timeoutable, timeout_in: 1.day"
-      )
+    def custom_user_model
+      template("app/models/user.rb", force: true)
     end
 
     def generate_session_controller
-      create_file(
-        "app/controllers/sessions_controller.rb",
-        SESSION_CONTROLLER
-      )
+      template("app/controllers/sessions_controller.rb", force: true)
     end
 
     def modify_session_route
-      gsub_file(
-        "config/routes.rb",
-        /devise_for\s*:\s*users/,
-        <<~RUBY
-          devise_for :users, defaults: {format: :json}, controllers: {sessions: "sessions"}
-          get "/users/current", to: "application#current", defaults: {format: :json}
-
-          get "*path", to: "pages#index", constraints: ->(request) do
-            !request.xhr? && request.format.html?
-          end
-        RUBY
-      )
+      template("config/routes.rb", force: true)
     end
 
     def modify_app_controller
-      inject_into_class(
-        "app/controllers/application_controller.rb",
-        "ApplicationController",
-        APP_CONTROLLER
-      )
+      template("app/controllers/application_controller.rb", force: true)
     end
 
     def insert_secret_key

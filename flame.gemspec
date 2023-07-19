@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 3.12"
   s.add_development_dependency "standard", "~> 1.29"
   s.add_development_dependency "generator_spec"
+  s.add_development_dependency "overcommit"
 end

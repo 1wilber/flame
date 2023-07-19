@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
-require 'pathname'
+require "pathname"
 
-source_path = (Pathname.new(__FILE__).dirname + '../lib').expand_path
+source_path = (Pathname.new(__FILE__).dirname + "../lib").expand_path
 $LOAD_PATH << source_path
 
-require 'flame'
+require "flame"
 
 if ARGV.empty?
   puts "Please provide a path for the new application"
@@ -21,6 +21,6 @@ ARGV << "--skip-jbuilder"
 ARGV << "--database=postgresql"
 ARGV << "-T"
 
-templates_path = File.expand_path('../../templates', __FILE__)
+templates_path = File.expand_path("../../templates", __FILE__)
 Flame::Generators::App.source_paths << Rails::Generators::AppGenerator.source_root << templates_path
 Flame::Generators::App.start

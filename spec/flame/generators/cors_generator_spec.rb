@@ -1,7 +1,4 @@
-require "bundler/setup"
 require "generator_spec"
-
-Bundler.require(:default, :test)
 
 describe Flame::CorsGenerator, type: :generator do
   destination File.expand_path("../../../tmp", __FILE__)
