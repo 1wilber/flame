@@ -1,3 +1,13 @@
+## v0.3.0 (2023-07-18)
+
+### Feat
+
+- problems with some templates
+
+### Fix
+
+- problems with solargraph
+
 ## v0.2.2 (2023-07-14)
 
 ### Fix
